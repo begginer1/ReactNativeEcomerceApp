@@ -21,9 +21,9 @@
      return (
          <SafeAreaView>
             <ScrollView>
-            <View style={{width:'100%',flexDirection: 'row',backgroundColor:'green'}}>
+            <View style={{width:'100%',flexDirection: 'row'}}>
             <Icon style={styles.icon} name="arrow-left" size={28} color="#000000" />
-                <Text style={{fontStyle:'normal',fontSize:29,marginRight:'14%',marginTop:'3%'}}>Headphones</Text>
+                <Text style={{fontStyle:'normal',fontSize:29,paddingLeft:20,paddingRight:'10%',marginTop:'3%'}}>Headphones</Text>
                 <Icon style={styles.icon} name="search" size={28} color="#000000" />
                 <Icon style={styles.icon} name="microphone" size={28} color="#000000" />
                 <Icon style={styles.icon} name="shopping-cart" size={28} color="#000000" />
@@ -53,7 +53,6 @@
              <FlatList
                  numColumns={2}
                  data={products}
-                 scrollEnabled={false}
                  keyExtractor={(item, index) => index.toString()}
                  renderItem={({ item }) => (<Product product={item} />)}></FlatList>
                 <View style={{ paddingBottom:220}}>
@@ -80,8 +79,9 @@
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 100,
-            backgroundColor: 'orange',
-            marginTop:'1%'
+            backgroundColor: 'grey',
+            marginTop:'2%',
+            padding:'1%'
           },
 
     });
