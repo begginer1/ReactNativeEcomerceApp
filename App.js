@@ -2,7 +2,7 @@
  import React from 'react';
  import Product from './Product'
  import Icon from 'react-native-vector-icons/FontAwesome'; 
- import { StyleSheet, Button, View, SafeAreaView, Text, Alert,TouchableOpacity } from 'react-native';
+ import { StyleSheet, Button, View, SafeAreaView, Text, Alert,TouchableOpacity, ScrollView } from 'react-native';
  import {
      FlatList,
  } from 'react-native';
@@ -20,9 +20,10 @@
  const App = () => {
      return (
          <SafeAreaView>
-            <View style={{width:'100%',height:'6%',flexDirection: 'row', flexWrap: 'wrap' ,backgroundColor:'green'}}>
+            <ScrollView>
+            <View style={{width:'100%',flexDirection: 'row',backgroundColor:'green'}}>
             <Icon style={styles.icon} name="arrow-left" size={28} color="#000000" />
-                <Text style={{fontStyle:'normal',fontSize:23,marginRight:'14%',marginTop:'3%'}}>Headphones</Text>
+                <Text style={{fontStyle:'normal',fontSize:29,marginRight:'14%',marginTop:'3%'}}>Headphones</Text>
                 <Icon style={styles.icon} name="search" size={28} color="#000000" />
                 <Icon style={styles.icon} name="microphone" size={28} color="#000000" />
                 <Icon style={styles.icon} name="shopping-cart" size={28} color="#000000" />
@@ -52,12 +53,13 @@
              <FlatList
                  numColumns={2}
                  data={products}
+                 scrollEnabled={false}
                  keyExtractor={(item, index) => index.toString()}
                  renderItem={({ item }) => (<Product product={item} />)}></FlatList>
-                 
-                <View style={{padding:20}}>
-                  <Text>hello</Text>
+                <View style={{ paddingBottom:220}}>
+            
                 </View>
+                </ScrollView>
          </SafeAreaView>
          
      );
@@ -68,13 +70,13 @@
  const styles = StyleSheet.create(
     {
         icon: {
-            width: '10%',
-            height: '50%',
+            margin:'0.5%',
             marginTop:'3%',
+            padding:'1%'
         },
         roundButton: {
             width: '23%',
-            height: '30%',
+            // height: '30%',
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 100,

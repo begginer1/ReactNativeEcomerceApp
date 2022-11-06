@@ -12,7 +12,7 @@ export default function Product(props)  {
      
        const { name, brand, price, productImage, originalPrice, Discount,Ratingimg } =props.product;
         return (
-            <View style={{ width: '48%', alignItem: 'center', margin: '1%', padding: '2%' ,backgroundColor:'orange'}}>
+            <View style={{alignItem: 'center', margin: '1%', padding: '2%' ,backgroundColor:'orange'}}>
                 <Image style={styles.Img} source={{ uri: productImage }} />
                 <Text style={{ fontWeight: 'bold' }}>{brand}</Text>
                 <Text style={{ fontSize: 13 }}>{name}</Text>
